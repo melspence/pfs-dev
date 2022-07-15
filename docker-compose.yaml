@@ -5,25 +5,14 @@ services:
 
   # Nginx Service
   nginx:
-<<<<<<< HEAD
-    image: nginx:1.21-alpine
-=======
     image: nginx:1.21
->>>>>>> 10a5af5 (Basic LEMP stack created)
     ports:
       - 80:80
     volumes:
       - ./src:/var/www/php
       - ./.docker/nginx/conf.d:/etc/nginx/conf.d
-<<<<<<< HEAD
-      - phpmyadmindata:/var/www/phpmyadmin
     depends_on:
       - php
-      - phpmyadmin
-=======
-    depends_on:
-      - php
->>>>>>> 10a5af5 (Basic LEMP stack created)
 
   # PHP Service
   php:
@@ -52,19 +41,11 @@ services:
 
   # PhpMyAdmin Service
   phpmyadmin:
-<<<<<<< HEAD
-    image: phpmyadmin/phpmyadmin:5-fpm-alpine
-    environment:
-      PMA_HOST: mysql
-    volumes:
-      - phpmyadmindata:/var/www/html
-=======
     image: phpmyadmin/phpmyadmin:5
     ports:
       - 8080:80
     environment:
       PMA_HOST: mysql
->>>>>>> 10a5af5 (Basic LEMP stack created)
     depends_on:
       mysql:
         condition: service_healthy
@@ -72,10 +53,4 @@ services:
 # Volumes
 volumes:
 
-<<<<<<< HEAD
   mysqldata:
-
-  phpmyadmindata:
-=======
-  mysqldata:
->>>>>>> 10a5af5 (Basic LEMP stack created)
