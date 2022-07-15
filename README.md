@@ -1,4 +1,4 @@
-# Primed for Success, part 2: put your images on a diet
+# Primed for Success, part 2: convert the basic LEMP stack to use Alpine images where possible
 
 
 ## Content
@@ -30,8 +30,8 @@ Add the following domains to your machine's `hosts` file:
 Clone the repository and `checkout` the `part-2` branch:
 
 ```
-$ git clone git@github.com:melspence/pfs-dev.git && cd pfs-dev
-$ git checkout 2-basic-lemp-stack-alpine
+$ git clone git@github.com:osteel/docker-tutorial.git && cd docker-tutorial
+$ git checkout part-2
 ```
 
 Copy `.env.example` to `.env`:
@@ -89,4 +89,3 @@ To remove everything, including images and orphan containers:
 ```
 $ docker compose down -v --rmi all --remove-orphans
 ```
-
